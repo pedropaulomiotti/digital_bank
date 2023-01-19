@@ -21,7 +21,7 @@ gem 'devise'
 gem 'cpf_cnpj'
 
 # Gem for translation
-
+gem 'rails-i18n', '~>5.1'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
