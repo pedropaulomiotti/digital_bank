@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_19_125359) do
+ActiveRecord::Schema.define(version: 2023_01_19_215118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "movements", force: :cascade do |t|
+    t.string "type"
+    t.float "value"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_movements_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "full_name"
@@ -21,6 +30,8 @@ ActiveRecord::Schema.define(version: 2023_01_19_125359) do
     t.string "phone"
     t.string "email", default: "", null: false
     t.date "birthday"
+    t.string "account_number"
+    t.float "account_balance", default: 0.0
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -31,4 +42,5 @@ ActiveRecord::Schema.define(version: 2023_01_19_125359) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "movements", "users"
 end

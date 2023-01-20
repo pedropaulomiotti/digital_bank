@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   namespace :users_backoffice do
-    get 'welcome/index'
+    resources :users, only: [:index]
   end
   devise_for :users
 

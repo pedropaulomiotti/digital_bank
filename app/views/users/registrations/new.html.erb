@@ -41,6 +41,8 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <% @account_number = rand(000000...999999).to_s %>
+
   <div class="actions">
     <%= f.submit "Cadastrar" %>
   </div>
