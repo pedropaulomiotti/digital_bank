@@ -1,6 +1,59 @@
-<h1>Digital Bank</h1>
-<h2>Página do Usuário</h2>
-<br>
-<h3><%= link_to 'Editar o seu Perfil', edit_user_registration_path %></h3>
-<br>
-<h3><%= link_to 'Encerrar a sessão', destroy_user_session_path, :method => 'delete' %></h3>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DigitalBank - UserPage</title>
+        <style>
+            .index_user {
+                text-align: center;
+                position: absolute;
+                left: 35%;
+                top: 20%;
+            }
+
+            .tittle {
+                font-size: 140px;
+                font-family: Comic Sans MS;
+                color: rgb(43, 94, 143);
+            }
+
+            .text {
+                font-size: 60px;
+                font-family: Comic Sans MS;
+                color: rgb(43, 94, 143);
+            }
+
+            .text_one {
+                font-size: 45px;
+                font-family: Comic Sans MS;
+                color: rgb(43, 94, 143);
+            }
+
+            .text_two {
+                font-size: 30px;
+                font-family: Comic Sans MS;
+                color: rgb(43, 94, 143);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="index_user">
+            <div class="tittle">
+                <p>Digital Bank</p>
+            </div>
+
+            <div class="text">
+                <p>Página do Usuário</p>
+            </div>
+
+            <div class="text_one">
+                <p>Bem-vindo, <%= current_user.full_name %> !</p>
+            </div>
+
+            <div class="text_two">
+                <p>Número da conta: <%= current_user.account_number %></p>
+                <p>Seu Saldo atual: R$<%= current_user.account_balance %></p>
+            </div>
+        </div>
+    </body>
+</html>

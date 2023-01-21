@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :full_name, :identification, :phone, :birthday, presence: true
-  validates :email, :phone, :identification, uniqueness: true
+  validates :email, :phone, :identification,:account_number, uniqueness: true
+  
 end

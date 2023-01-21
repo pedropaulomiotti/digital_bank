@@ -1,0 +1,20 @@
+<h1>Digital Bank</h1>
+<h2>Página para Sacar</h2>
+<br>
+
+<%= form_with(url: users_backoffice_movements_withdraw_path, local: true) do |form| %>
+
+    <div class="field">
+        <%= form.label :value, 'Valor do saque (R$)' %> <br>
+        <%= form.text_field :value %>
+    </div>
+
+    <br>
+
+    <div class="actions">
+        <%= form.submit 'Sacar' %>
+    </div>
+
+<% end %>
+<br>
+<h4><%= link_to 'Voltar', users_backoffice_users_path %></h4>

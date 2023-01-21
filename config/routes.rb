@@ -5,6 +5,13 @@ Rails.application.routes.draw do
 
   namespace :users_backoffice do
     resources :users, only: [:index]
+    get 'movements/deposit'
+    post 'movements/deposit'
+    get 'movements/withdraw'
+    post 'movements/withdraw'
+    get 'movements/transfer'
+    post 'movements/transfer'
+    get 'movements/movement'
   end
   devise_for :users
 

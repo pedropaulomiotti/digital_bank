@@ -1,16 +1,52 @@
-<h2>Forgot your password?</h2>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+    <title>DigitalBank</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <%= stylesheet_link_tag    'application' %>
+    <%= stylesheet_link_tag    'users_backoffice' %>
+  </head>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+  <body class="login">
+    <div>
+      <div class="login_wrapper">
+        <section class="login_content">
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+            <h1>Digital Bank</h1>
+            <h2>Esqueceu sua senha?</h2>
+            <%= render "users/shared/error_messages", resource: resource %>
+            <div>
+              <%= f.email_field :email, autofocus: true, placeholder:"E-mail", class:"form-control" %>
+            </div>
 
-<%= render "users/shared/links" %>
+            <div>
+              <%= f.submit "Fazer nova senha", class:"btn btn-success btn-lg submit" %>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="separator">
+              <h1>Lembrou sua senha?</h1>
+              <h4><%= link_to 'Acessar sua Conta', new_user_session_path, class:"btn btn-primary btn-lg submit to_register" %></h4>
+              <br />
+              <h4><%= link_to 'Voltar a Página Principal', root_path, class:"btn btn-default submit" %></h4>
+            </div>
+          <% end %>
+        </section>
+      </div>
+    </div>
+
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'users_backoffice' %>
+
+  </body>
+</html>
+
