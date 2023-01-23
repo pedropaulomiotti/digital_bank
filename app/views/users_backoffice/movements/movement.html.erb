@@ -1,0 +1,28 @@
+<h1>Digital Bank</h1>
+<h2>Página do Extrato Bancário</h2>
+<br>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Valor</th>
+      <th>Conta</th>
+      <th colspan="3">
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+        <% @movements.each do |movement| %>
+            <tr>
+                <td><%= movement.type %></td>
+                <td><%= movement.value %></td>
+                <td><%= user.account_number %></td>
+            </tr>
+        <% end %>
+  </tbody>
+</table>
+
+<br>
+<h4><%= link_to 'Voltar', users_backoffice_users_path %></h4>

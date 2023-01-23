@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>DigitalBank</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application' %>
+    <%= stylesheet_link_tag    'users_backoffice' %>
+  </head>
+
+  <body class="login">
+    <div>
+      <div class="login_wrapper">
+        <section class="login_content">
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+            <%= f.hidden_field :reset_password_token %>
+            <h1>Digital Bank</h1>
+            <h2>Alterar senha</h2>
+            <%= render "users/shared/error_messages", resource: resource %>
+
+            <div>
+              <br>
+              <%= f.password_field :password, placeholder:"Senha (No mínimo 6 caracteres)", class:"form-control" %>
+            </div>
+
+            <div>
+              <%= f.password_field :password_confirmation, placeholder:"Confirme sua Senha", class:"form-control" %>
+            </div>
+
+            <div>
+              <%= f.submit "Alterar senha", class:"btn btn-success btn-lg submit" %>
+            </div>
+          <% end %>
+        </section>
+      </div>
+    </div>
+
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'users_backoffice' %>
+
+  </body>
+</html>
+
