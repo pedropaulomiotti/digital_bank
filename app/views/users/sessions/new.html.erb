@@ -25,10 +25,11 @@
           <section class="login_content">
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
               <h1>Digital Bank</h1>
-              <h2>Acessar a sua conta</h2>
+              <h1>Bem-Vindo ao Digital bank,<br> o seu banco digital!</h1>
+              <h2>Acesse sua conta!</h2>
 
               <% flash.each do |key, value| %>
-                <div class="flash <%= key %>"><%= value %></div>
+                <div class="flash <%= key %>"><h3><strong><%= value %></strong></h3></div>
               <% end %>
 
               <div>
@@ -48,8 +49,6 @@
               <div class="separator">
                 <h1>Cliente novo?</h1>
                 <h4><%= link_to 'Criar Conta', new_user_session_path, class:"btn btn-primary btn-lg submit to_register", href:"#signup" %></h4>
-                <br />
-                <h4><%= link_to 'Voltar a Página Principal', root_path, class:"btn btn-default submit" %></h4>
               </div>
             <% end %>
           </section>
@@ -103,8 +102,6 @@
               <div class="separator">
                 <h1>Já é Cliente?</h1>
                 <h4><%= link_to 'Acessar sua Conta', new_user_session_path, class:"btn btn-primary btn-lg submit to_register", href:"#signin" %></h4>
-                <br />
-                <h4><%= link_to 'Voltar a Página Principal', root_path, class:"btn btn-default submit" %></h4>
               </div>
             <% end %>
           </section>
