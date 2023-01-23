@@ -1,25 +1,50 @@
-<h2>Change your password</h2>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
-  <%= f.hidden_field :reset_password_token %>
+    <title>DigitalBank</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
-  </div>
+    <%= stylesheet_link_tag    'application' %>
+    <%= stylesheet_link_tag    'users_backoffice' %>
+  </head>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+  <body class="login">
+    <div>
+      <div class="login_wrapper">
+        <section class="login_content">
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+            <%= f.hidden_field :reset_password_token %>
+            <h1>Digital Bank</h1>
+            <h2>Alterar senha</h2>
+            <%= render "users/shared/error_messages", resource: resource %>
 
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
+            <div>
+              <br>
+              <%= f.password_field :password, placeholder:"Senha (No mínimo 6 caracteres)", class:"form-control" %>
+            </div>
 
-<%= render "users/shared/links" %>
+            <div>
+              <%= f.password_field :password_confirmation, placeholder:"Confirme sua Senha", class:"form-control" %>
+            </div>
+
+            <div>
+              <%= f.submit "Alterar senha", class:"btn btn-success btn-lg submit" %>
+            </div>
+          <% end %>
+        </section>
+      </div>
+    </div>
+
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'users_backoffice' %>
+
+  </body>
+</html>
+
