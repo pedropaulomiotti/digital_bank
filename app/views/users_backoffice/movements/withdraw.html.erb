@@ -1,20 +1,32 @@
-<h1>Digital Bank</h1>
-<h2>Página para Sacar</h2>
-<br>
+<h1><strong>Digital Bank</strong></h1>
 
-<%= form_with(url: users_backoffice_movements_withdraw_path, local: true) do |form| %>
+<div class="clearfix"></div>
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        <div class="x_panel">
+            <div class="x_content">
+                <%= form_with(url: users_backoffice_movements_deposit_path, local: true) do |f| %>
+                    <h1><strong>Página de Deposito - Ainda em desenvolvimento!</strong></h1>
 
-    <div class="field">
-        <%= form.label :value, 'Valor do saque (R$)' %> <br>
-        <%= form.text_field :value %>
+                    <div class="field item form-group">
+                        <%= f.label :value, 'Valor do saque (R$)', class:"col-form-label col-md-3 col-sm-3  label-align" %><br />
+                        <div class="col-md-6 col-sm-6">
+                            <%= f.text_field :value, autofocus: true, class:"form-control" %>
+                        </div>
+                    </div>
+
+                    <div class="ln_solid">
+                        <div class="form-group">
+                            <div class="col-md-6 offset-md-3">
+                                <br>
+                                <div class="actions">
+                                    <%= f.submit 'Sacar', class:"btn btn-success" %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
     </div>
-
-    <br>
-
-    <div class="actions">
-        <%= form.submit 'Sacar' %>
-    </div>
-
-<% end %>
-<br>
-<h4><%= link_to 'Voltar', users_backoffice_users_path %></h4>
+</div>

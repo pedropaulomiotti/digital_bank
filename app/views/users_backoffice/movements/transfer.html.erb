@@ -1,4 +1,39 @@
-<h1>Digital Bank</h1>
-<h2>Página de trasferência</h2>
-<br>
-<h4><%= link_to 'Voltar', users_backoffice_users_path %></h4>
+<h1><strong>Digital Bank</strong></h1>
+
+<div class="clearfix"></div>
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        <div class="x_panel">
+            <div class="x_content">
+                <%= form_with(url: users_backoffice_movements_deposit_path, local: true) do |f| %>
+                    <h1><strong>Página de Trasferência - Ainda em desenvolvimento!</strong></h1>
+
+                    <div class="field item form-group">
+                        <%= f.label :value, 'Valor da Trasferência (R$)', class:"col-form-label col-md-3 col-sm-3  label-align" %><br />
+                        <div class="col-md-6 col-sm-6">
+                            <%= f.text_field :value, autofocus: true, class:"form-control" %>
+                        </div>
+                    </div>
+
+                    <div class="field item form-group">
+                        <%= f.label :user_id, 'Para que conta deseja fazer a transferência', class:"col-form-label col-md-3 col-sm-3  label-align" %><br />
+                        <div class="col-md-6 col-sm-6">
+                            <%= f.text_field :user_id, autofocus: true, class:"form-control" %>
+                        </div>
+                    </div>
+
+                    <div class="ln_solid">
+                        <div class="form-group">
+                            <div class="col-md-6 offset-md-3">
+                                <br>
+                                <div class="actions">
+                                    <%= f.submit 'Trasferir', class:"btn btn-success" %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
