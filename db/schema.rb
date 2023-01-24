@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2023_01_19_215118) do
   enable_extension "plpgsql"
 
   create_table "movements", force: :cascade do |t|
-    t.string "type"
+    t.string "mode"
     t.float "value"
     t.bigint "user_id"
     t.datetime "created_at", null: false

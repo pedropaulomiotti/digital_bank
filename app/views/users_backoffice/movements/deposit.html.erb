@@ -1,4 +1,3 @@
-
 <h1><strong>Digital Bank</strong></h1>
 
 <div class="clearfix"></div>
@@ -7,13 +6,13 @@
         <div class="x_panel">
             <div class="x_content">
                 <%= form_with(url: users_backoffice_movements_deposit_path, local: true) do |f| %>
-                    <h1><strong>Página de Deposito</strong></h1>
+                    <h1><strong>Página de Deposito - Ainda em desenvolvimento!</strong></h1>
 
                     <div class="field item form-group">
-                    <%= f.label :value, 'Valor do depósito (R$)', class:"col-form-label col-md-3 col-sm-3  label-align" %><br />
-                    <div class="col-md-6 col-sm-6">
-                        <%= f.text_field :value, autofocus: true, class:"form-control" %>
-                    </div>
+                        <%= f.label :value, 'Valor do depósito (R$)', class:"col-form-label col-md-3 col-sm-3  label-align" %><br />
+                        <div class="col-md-6 col-sm-6">
+                            <%= f.text_field :value, autofocus: true, class:"form-control" %>
+                        </div>
                     </div>
 
                     <div class="ln_solid">
@@ -21,7 +20,7 @@
                             <div class="col-md-6 offset-md-3">
                                 <br>
                                 <div class="actions">
-                                <%= f.submit 'Depositar', class:"btn btn-success" %>
+                                    <%= f.submit 'Depositar', class:"btn btn-success" %>
                                 </div>
                             </div>
                         </div>
@@ -31,4 +30,3 @@
         </div>
     </div>
 </div>
-

@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   
-  root 'welcome#index'
-  get 'welcome/index'
+  root 'users_backoffice/users#index'
 
   namespace :users_backoffice do
     resources :users, only: [:index]

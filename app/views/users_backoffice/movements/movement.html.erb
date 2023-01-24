@@ -1,5 +1,5 @@
-<h1>Digital Bank</h1>
-<h2>Página do Extrato Bancário</h2>
+<h1><strong>Digital Bank</strong></h1>
+<h2>Página do Extrato Bancário - Ainda em desenvolvimento!</h2>
 <br>
 
 <table class="table">
@@ -16,13 +16,11 @@
   <tbody>
         <% @movements.each do |movement| %>
             <tr>
-                <td><%= movement.type %></td>
+                <td><%= movement.mode %></td>
                 <td><%= movement.value %></td>
-                <td><%= user.account_number %></td>
+                <td><%= @user.account_number %></td>
             </tr>
         <% end %>
   </tbody>
 </table>
 
-<br>
-<h4><%= link_to 'Voltar', users_backoffice_users_path %></h4>
